@@ -23,11 +23,14 @@ ADD ./foreground.sh /etc/apache2/foreground.sh
 
 RUN apt-get update && \
     apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "` && \
-    apt-get install software-properties-common && \
+    apt-get install -y software-properties-common && \
+    apt-get install -y language-pack-en-base && \
+    export LC_ALL=en_US.UTF-8 && \
+    export LANG=en_US.UTF-8 && \
     add-apt-repository ppa:ondrej/php && \
     apt-get update && \ 
 	apt-get -y install mysql-client pwgen python-setuptools curl git unzip apache2 php5.6 \
-		php5.6-gd libapache2-mod-php postfix wget supervisor php5.6-pgsql curl libcurl3 \
+		php5.6-gd libapache2-mod-php5.6 postfix wget supervisor php5.6-pgsql curl libcurl3 \
 		libcurl3-dev php5.6-curl php5.6-xmlrpc php5.6-intl php5.6-mysql git-core php5.6-xml php5.6-mbstring php5.6-zip php5.6-soap cron php5.6-ldap && \
 	cd /tmp && \
 	git clone -b MOODLE_27_STABLE git://git.moodle.org/moodle.git --depth=1 && \
