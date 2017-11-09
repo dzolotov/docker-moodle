@@ -24,9 +24,10 @@ ADD ./foreground.sh /etc/apache2/foreground.sh
 RUN apt-get update && \
     apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "` && \
     apt-get install -y software-properties-common && \
-    apt-get install -y language-pack-en-base && \
-    export LC_ALL=en_US.UTF-8 && \
-    export LANG=en_US.UTF-8 && \
+    apt-get install -y language-pack-ru-base tzdata && \
+    export LC_ALL=ru_RU.UTF-8 && \
+    export LANG=ru_RU.UTF-8 && \
+    echo "Europe/Moscow" >/etc/timezone && dpkg-reconfigure -f notinteractive tzdata && \
     add-apt-repository ppa:ondrej/php && \
     apt-get update && \ 
 	apt-get -y install mysql-client pwgen python-setuptools curl git unzip apache2 php5.6 \
