@@ -38,7 +38,8 @@ RUN apt-get update && \
 	mv /tmp/moodle/* /var/www/html/ && \
 	rm /var/www/html/index.html && \
 	chown -R www-data:www-data /var/www/html && \
-	chmod +x /etc/apache2/foreground.sh
+	chmod +x /etc/apache2/foreground.sh && \
+	sed -i 's/utf8/utf8mb4/g' /var/www/html/lib/dml/mysqli_native_moodle_database.php 
 
 #cron
 COPY moodlecron /etc/cron.d/moodlecron
