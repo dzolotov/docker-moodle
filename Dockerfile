@@ -41,6 +41,9 @@ RUN apt-get update && \
 	chmod +x /etc/apache2/foreground.sh && \
 	sed -i 's/utf8/utf8mb4/g' /var/www/html/lib/dml/mysqli_native_moodle_database.php 
 
+ENV LC_ALL=ru_RU.UTF-8
+ENV LANG=ru_RU.UTF-8
+
 #cron
 COPY moodlecron /etc/cron.d/moodlecron
 RUN chmod 0644 /etc/cron.d/moodlecron
