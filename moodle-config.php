@@ -763,6 +763,8 @@ $CFG->lang = 'ru';
 // (Development->Profiling) built into Moodle.
 //      $CFG->pathtodot = '';
 
+$CFG->lang = 'ru';
+$CFG->locale =  'ru_RU.UTF-8';
 //=========================================================================
 // ALL DONE!  To continue installation, visit your main page with a browser
 //=========================================================================
