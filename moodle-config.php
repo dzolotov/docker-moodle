@@ -409,6 +409,8 @@ $CFG->admin = 'admin';
 //
 //     $CFG->lang = 'yourlangcode'; // for example 'cs'
 $CFG->lang = 'ru';
+$CFG->locale = 'ru_RU.UTF-8';
+$CFG->calendar_startwday = 1 ;
 //
 // When Moodle is about to perform an intensive operation it raises PHP's memory
 // limit. The following setting should be used on large sites to set the raised
