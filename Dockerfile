@@ -38,7 +38,7 @@ RUN apt-get update && \
 	mv /tmp/moodle/* /var/www/html/ && \
 	rm /var/www/html/index.html && \
 	chown -R www-data:www-data /var/www/html && \
-	chmod +x /etc/apache2/foreground.sh && \
+	chmod +x /etc/apache2/foreground.sh
 
 ENV LC_ALL=ru_RU.UTF-8
 ENV LANG=ru_RU.UTF-8
