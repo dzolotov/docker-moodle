@@ -34,12 +34,11 @@ RUN apt-get update && \
 		php5.6-gd libapache2-mod-php5.6 postfix wget supervisor php5.6-pgsql curl libcurl3 \
 		libcurl3-dev php5.6-curl php5.6-xmlrpc php5.6-intl php5.6-mysql git-core php5.6-xml php5.6-mbstring php5.6-zip php5.6-soap cron php5.6-ldap && \
 	cd /tmp && \
-	git clone -b MOODLE_27_STABLE git://git.moodle.org/moodle.git --depth=1 && \
+	git clone -b MOODLE_271_STABLE git://github.com/egorsmorgunov/moodle.git --depth=1 && \
 	mv /tmp/moodle/* /var/www/html/ && \
 	rm /var/www/html/index.html && \
 	chown -R www-data:www-data /var/www/html && \
 	chmod +x /etc/apache2/foreground.sh && \
-	sed -i 's/utf8/utf8mb4/g' /var/www/html/lib/dml/mysqli_native_moodle_database.php 
 
 ENV LC_ALL=ru_RU.UTF-8
 ENV LANG=ru_RU.UTF-8
