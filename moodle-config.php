@@ -141,7 +141,7 @@ $CFG->admin = 'admin';
 // in PHP.ini, you can also specify it here if needed.
 // See details at: http://php.net/manual/en/function.date-default-timezone-set.php
 // List of time zones at: http://php.net/manual/en/timezones.php
-//     date_default_timezone_set('Australia/Perth');
+     date_default_timezone_set('Europe/Moscow');
 //
 // Change the key pair lifetime for Moodle Networking
 // The default is 28 days. You would only want to change this if the key
