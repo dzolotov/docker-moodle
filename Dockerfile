@@ -27,7 +27,7 @@ RUN apt-get update && \
     apt-get install -y language-pack-ru-base tzdata && \
     export LC_ALL=ru_RU.UTF-8 && \
     export LANG=ru_RU.UTF-8 && \
-    echo "Europe/Moscow" >/etc/timezone && dpkg-reconfigure -f notinteractive tzdata && \
+    echo "Europe/Moscow" >> /etc/timezone && dpkg-reconfigure -f notinteractive tzdata && \
     add-apt-repository ppa:ondrej/php && \
     apt-get update && \ 
 	apt-get -y install mysql-client pwgen python-setuptools curl git unzip apache2 php5.6 \
